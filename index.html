@@ -1,0 +1,73 @@
+<html>
+    <title>
+       Aplikasi retail 
+    </title>
+
+    <head>
+            <link rel="stylesheet" href="style.css" type="text/css">
+            <style>
+                p {
+                    color: green;
+                    font-style: italic;
+                    font-size: 25px;
+                }
+            </style>
+        <!-- Sintak javaScript -->
+        <script type="text/javaScript">
+            function add() {
+                var v1 = document.getElementById('v1').value;
+                var v2 = document.getElementById('v2').value;
+                var x = parseInt(v1)+parseInt(v2);
+                document.getElementById("hasil").value = x;
+            }
+            function kali(){
+                var v1 = document.getElementById('v1').value;
+                var v2 = document.getElementById('v2').value;
+                var x = parseInt(v1)*parseInt(v2);
+                document.getElementById("hasil").value = x;
+            }
+        </script>
+
+        <script src="demo.js"></script>
+        <!-- End javaScript -->
+    </head>
+<body>
+<Jumlah>
+    <button type="button" onclick="document.getElementById('demo').innerHTML=Date()">
+        Tampil Tanggal
+    </button>
+    <p id="demo"> </p>
+    <input type="text" name="v1" id="v1"><br>
+    <input type="text" name="v2" id="v2"><br>
+    <button type="button" onclick="add()">Jumlah</button>
+    <button type="button" onclick="kali()">Kali</button>
+    <button type="button" onclick="kurang()">Kurang</button><br>
+    <input id="hasil" readonly><br>
+
+    <ul id="addlist">
+        <li>Dasar HTML</li>
+        <li>JavaScript</li>
+    </ul>
+  <input type="text" name="textAdd" id="textAdd">
+    <button id="btnaddlist">Add List</button>
+
+    <script>
+        const list          = document.getElementById("addlist");
+        const tambahlist    = document.getElementById("btnaddlist");
+        var addText         = document.getElementById("textAdd");
+        //console.log(addText.value);
+        tambahlist.addEventListener("click",function(){
+            // Membuat element <li> yang baru
+            const listbaru = document.createElement("li");
+            listbaru.innerText = addText.value;
+
+            // Menambahkan element baru kedalam tag <ul>
+            list.appendChild(listbaru);
+        })
+
+    </script>
+
+
+</body>
+
+</html>
